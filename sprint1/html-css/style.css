@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #82c3ec;
+  font-family: "Poppins", sans-serif;
+  padding: 35px 50px;
+}
+
+.cabecera__figure {
+  width: 100%;
+  height: 30vh;
+}
+
+.cabecera__figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cabecera__figure img:hover {
+  transform: scale(1.2);
+}
+
+.cabecera__nav {
+  background-color: blue;
+  margin-top: 25px;
+  padding: 15px 25px;
+}
+
+.cabecera__list {
+  list-style: none;
+  display: flex;
+  font-size: 12px;
+}
+
+.cabecera__item {
+  /* margin-left: 25px; */
+  background-color: white;
+  padding: 5px 10px;
+  border: 1px solid black;
+  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px,
+    rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px,
+    rgba(240, 46, 170, 0.05) 25px 25px;
+}
+
+#enlaceActivo {
+  background-color: #82c3ec;
+}
+
+.cabecera__item:hover {
+  transform: translateY(-5px) scale(1.2);
+  cursor: pointer;
+  font-weight: 700;
+  background-color: aqua;
+}
+
+.principal {
+  display: flex;
+  width: 100%;
+  margin: 35px 0;
+  justify-content: space-between;
+}
+
+.principal__nav {
+  background-color: lavender;
+  width: 15%;
+  padding: 15px 10px;
+}
+
+.principal__figure {
+  width: 45%;
+}
+
+.principal__figure img {
+  width: 100%;
+}
+
+.principal__subtitle {
+  font-size: 16px;
+  background-color: blueviolet;
+  padding: 5px 10px;
+  border: 1px solid black;
+}
+
+.principal__list {
+  list-style: none;
+  font-size: 12px;
+  background-color: white;
+  padding: 5px;
+  height: 30%;
+}
+
+.principal__article {
+  width: 65%;
+  padding: 30px;
+  background-color: greenyellow;
+}
+
+.principal__parrafo {
+  width: 45%;
+  font-size: 12px;
+  text-align: justify;
+}
+
+.principal__section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.principal__aside {
+  background-color: aquamarine;
+  width: 15%;
+  display: flex;
+  align-items: center;
+  padding: 15px 10px;
+}
+
+.principal__iframe{
+    width: 100%;
+}
+
+.footer{
+    background-color: gray;
+    padding: 20px;
+    text-align: center;
+}
