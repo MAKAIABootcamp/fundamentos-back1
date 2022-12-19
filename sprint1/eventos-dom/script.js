@@ -35,7 +35,7 @@ const starWars = [
     birthYear: "33BBY",
     gender: "n/a",
     image:
-      "https://static.wikia.nocookie.net/esstarwars/images/e/e2/Artoo-Fathead.png/revision/latest?cb=20180108172244",
+      "https://static.wikia.nocookie.net/esstarwars/images/e/e2/Artoo-Fathead.png",
   },
   {
     name: "Darth Vader",
@@ -59,6 +59,41 @@ const starWars = [
     birthYear: "19BBY",
     gender: "female",
     image:
-      "https://static.wikia.nocookie.net/esstarwars/images/f/ff/Leia_photomasher.jpg/revision/latest?cb=20081221003327",
+      "https://static.wikia.nocookie.net/esstarwars/images/f/ff/Leia_photomasher.jpg",
   },
 ];
+
+//2. Insertar tarjetas de cada personaje dentro de main
+//2.1. Creando una función que nos permita pintar las cards (o tarjentas) dentro del contenedor main
+
+
+
+const printPersonajes = (listPersonajes, contenedor) => {
+    //1. Vaciemos el contenido del contenedor
+    contenedor.innerHTML = '';
+
+    //2. recorrer el array listPersonajes y por cada elemento nos debe pintar un card.
+    listPersonajes.forEach(personaje => {
+        const article = document.createElement('article');
+        article.classList.add("main__card");
+        article.innerHTML = `
+        <figure class="card__image">
+                    <img src=${personaje.image} alt=${personaje.name}>
+                </figure>
+                <h4 class="card__name">${personaje.name}</h4>
+        `;
+
+        contenedor.appendChild(article);
+    });
+
+}
+
+//2.2. Capturar el contenedor donde queremos pintar las cards
+//document.querySelector(selctor) recibe como parámetro el selector que posee el elemento que queremos capturar. En caso de: 1. Hacer referencia a una clase (class): .nombreDeLaClase, 2. Hacer referencia a un id: #nombreDelId, 3. Hacer referencia a una tag (o etiqueta): nombreDeLaEtiqueta por ejemplo: document.querySelector(a), document.querySelector(img), document.querySelector(h1)
+const main = document.querySelector('.main');
+
+const contenedorCards = document.getElementById("contenedorCards");
+
+printPersonajes(starWars, contenedorCards);
+
+

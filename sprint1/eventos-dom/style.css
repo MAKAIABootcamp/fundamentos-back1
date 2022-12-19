@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+body{
+    width: 100vw;
+    height: 100%;
+    background-image: url('./images/wallpapersden.com_death-star-hd-star-wars_2560x1440.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Unbounded', cursive;
+}
+
+.header{
+    text-align: center;
+    color: yellow;
+    /* padding-top: 20px; */
+}
+
+
+
+#contenedorCards{
+    display: flex;
+    padding: 30px;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.main__card{
+    width: 300px;
+    height: 450px;
+    position: relative;
+    color: yellow;
+}
+
+.card__image{
+    width: 100%;
+    height: 100%;
+}
+
+.card__image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.card__name{
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    padding: 10px 5px;
+}
+
+.main__card:hover{
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    transform: scale(1.1);
+}

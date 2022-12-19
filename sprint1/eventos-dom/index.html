@@ -8,12 +8,24 @@
     <title>Sesión 7 eventos del DOM</title>
   </head>
   <body>
-    <header>
-      <h1>Eventos del DOM</h1>
-
-      <h2>Personajes Star Wars</h2>
+    <header class="header">
+      <h1 class="header__title">Eventos del DOM</h1>
+      <figure class="header__image">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Star_Wars_Logo..png/640px-Star_Wars_Logo..png" alt="Star_Wars_Logo">
+      </figure>
+      <h2 class="header__subtitle">Personajes Star Wars</h2>
     </header>
-    <main></main>
+    <main class="main">
+        <section class="main__filtros"></section>
+        <section id="contenedorCards">
+            <article class="main__card">
+                <figure class="card__image">
+                    <img src="https://static.wikia.nocookie.net/esstarwars/images/f/ff/Leia_photomasher.jpg" alt="name">
+                </figure>
+                <h4 class="card__name">Luke Skywalker</h4>
+            </article>
+        </section>
+    </main>
     <script src="./script.js"></script>
   </body>
 </html>
