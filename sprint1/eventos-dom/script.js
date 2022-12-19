@@ -94,6 +94,9 @@ const main = document.querySelector('.main');
 
 const contenedorCards = document.getElementById("contenedorCards");
 
-printPersonajes(starWars, contenedorCards);
+//2.3. Escuchamos al evento DOMContentLoaded (Cuando la página recarga o se renderiza) y cuando este evento ocurre se ejecuta el callback (función que es pasada como parámetro a la función o método .addEventListener('nombreDelEvento', callback)).
+document.addEventListener('DOMContentLoaded', () => {
+    printPersonajes(starWars, contenedorCards);
+})
 
 
