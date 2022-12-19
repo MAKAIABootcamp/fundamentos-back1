@@ -2,7 +2,7 @@
 
 ## Sprint 1
 
-### Contenido 
+### Contenido 🥇
 
 1. Espacio de trabajo: Visual Studio Code
 2. HTML & CSS
@@ -37,6 +37,15 @@
 6. Generar un issues en el presente repositorio con los entregables descritos y mencionar a @WhitneySt
 
 ## Sprint 2
+
+### Contenido 🥇
+1. Funciones
+2. DOM y Eventos
+3. Responsive design
+4. Almacenamiento (Storage)
+
+### Retos 🐱‍💻
+1. Realizar un formulario que permita agregar un producto indicando: nombre, precio, cantidad y categoría. Al guardar, debe agregarlo aun array y mostrarlo en consola, posteriormente, mostrarlo en una tabla, donde estén enlistado todos los productos del array y en la última columna de la tabla debe poseer un botón que permita eliminar y actualizar dicho elemento en el array.
 
 ## Sprint 3
 
