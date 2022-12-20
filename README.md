@@ -50,3 +50,10 @@
 ## Sprint 3
 
 **Accede al material de nuestra sesiones [aquí](https://makaia-my.sharepoint.com/:f:/g/personal/mentoria_bootcamp_makaia_org/ErWA518UdzFLsCYexouX4hcBJUuASEwKXDXer0T5jpA5Dw?e=Pgb58X)** 👈
+
+## Recursos adicionales
+1. [Atajos de Teclado en VSC](https://dev.to/gdcodev/atajos-de-teclado-shortcuts-en-vscode-430a)
+2. [Listado de comandos Linux (para uso en la consola git bash o powershell 1)](https://axarnet.es/blog/comandos-linux)
+3. [Listado de comandos Linux (para uso en la consola git bash o powershell 2)](https://www.hostinger.co/tutoriales/linux-comandos)
+4. [Listado de comandos git 1](https://gist.github.com/dasdo/9ff71c5c0efa037441b6)
+5. [Listado de comandos git 2](https://www.freecodecamp.org/espanol/news/10-comandos-de-git-que-todo-desarrollador-debe-conocer/)
