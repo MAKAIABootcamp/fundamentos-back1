@@ -3,13 +3,13 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: content-box;
+    box-sizing: border-box;
 }
 
 body{
     width: 100%;
     height: 100%;
-    background-image: url('./images/wallpapersden.com_death-star-hd-star-wars_2560x1440.jpg');
+    background-image: url('../images/wallpapersden.com_death-star-hd-star-wars_2560x1440.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     font-family: 'Unbounded', cursive;
