@@ -60,13 +60,13 @@ if (dineroEnCajero) {
   ];
 
   while (dineroEnCajero > 0 && retiro >= 200) {
-    let transacción = false;
+    let transaccion = false;
     dineroCajero.forEach((dinero, index) => {
       if (
         dinero.denominacion === "1000" &&
         retiro >= dinero.valor &&
         dinero.total > 0 &&
-        !transacción
+        !transaccion
       ) {
         //Agregamos dinero al array del dinero que recibe el usuario
         entregaCliente[index].total =
@@ -76,7 +76,7 @@ if (dineroEnCajero) {
         dinero.total = dinero.total - dinero.valor;
         dinero.cantidad = dinero.cantidad - 1;
         console.log(dinero.denominacion);
-        transacción = true;
+        transaccion = true;
 
         retiro = retiro - dinero.valor;
         dineroEnCajero = dineroEnCajero - dinero.valor;
@@ -85,7 +85,7 @@ if (dineroEnCajero) {
         dinero.denominacion === "500" &&
         retiro >= dinero.valor &&
         dinero.total > 0 &&
-        !transacción
+        !transaccion
       ) {
         //Agregamos dinero al array del dinero que recibe el usuario
         entregaCliente[index].total =
@@ -95,7 +95,7 @@ if (dineroEnCajero) {
         dinero.total = dinero.total - dinero.valor;
         dinero.cantidad = dinero.cantidad - 1;
         console.log(dinero.denominacion);
-        transacción = true;
+        transaccion = true;
 
         retiro = retiro - dinero.valor;
         dineroEnCajero = dineroEnCajero - dinero.valor;
@@ -104,7 +104,7 @@ if (dineroEnCajero) {
         dinero.denominacion === "200" &&
         retiro >= dinero.valor &&
         dinero.total > 0 &&
-        !transacción
+        !transaccion
       ) {
         //Agregamos dinero al array del dinero que recibe el usuario
         entregaCliente[index].total =
@@ -114,14 +114,14 @@ if (dineroEnCajero) {
         dinero.total = dinero.total - dinero.valor;
         dinero.cantidad = dinero.cantidad - 1;
         console.log(dinero.denominacion);
-        transacción = true;
+        transaccion = true;
 
         retiro = retiro - dinero.valor;
         dineroEnCajero = dineroEnCajero - dinero.valor;
       }
     });
 
-    if (!transacción) {
+    if (!transaccion) {
       break;
     }
   }
