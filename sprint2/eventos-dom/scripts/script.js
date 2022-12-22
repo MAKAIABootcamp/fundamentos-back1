@@ -96,9 +96,29 @@ const main = document.querySelector(".main");
 
 const contenedorCards = document.getElementById("contenedorCards");
 
+//Para obtener los datos de sessionStorage usamos el método getItem(). Este método recibe un parámetro que sería la key (nombre de la propiedad que queremos recuperar desde sessionStorage)
+
+  let personajes = sessionStorage.getItem("personajes")
+    ? JSON.parse(sessionStorage.getItem("personajes"))
+    : [];
+
+  console.log(personajes);
+
 //2.3. Escuchamos al evento DOMContentLoaded (Cuando la página recarga o se renderiza) y cuando este evento ocurre se ejecuta el callback (función que es pasada como parámetro a la función o método .addEventListener('nombreDelEvento', callback)).
 document.addEventListener("DOMContentLoaded", () => {
-  printPersonajes(starWars, contenedorCards);
+  
+
+  if (personajes.length === 0) {
+    //Guadar el array starWar a sessionStorage con el método setItem(). este método recibe dos parámetros: 1. es la Key (el nombre de la propiedad donde vamos almacenar los datos) 2. Los datos queremos almacenar. Estos datos deben guardarse en el storage como formato JSON.
+    sessionStorage.setItem("personajes", JSON.stringify(starWars));
+    personajes = JSON.parse(sessionStorage.getItem("personajes"));
+    console.log(personajes);
+  }
+
+
+
+  //Pintamos las cards de cada personaje
+  printPersonajes(personajes, contenedorCards);
 });
 
 //Funcionamiento a los botones de filtrado
@@ -123,9 +143,9 @@ filterButtons.forEach((button) => {
     let personajesFiltrados = [];
 
     if (button.id === "all") {
-      personajesFiltrados = starWars;
+      personajesFiltrados = personajes;
     } else {
-      personajesFiltrados = starWars.filter(
+      personajesFiltrados = personajes.filter(
         (personaje) => personaje.specie === button.id
       );
     }
@@ -138,7 +158,7 @@ filterButtons.forEach((button) => {
 
 //Sacar del array Star Wars las species disponibles
 
-const speciesPersonajes = starWars.map((personaje) => `${personaje.specie}2`);
+const speciesPersonajes = personajes.map((personaje) => `${personaje.specie}2`);
 console.log(speciesPersonajes);
 
 //Obtener los valores de speciesPersonajes no duplicados
@@ -150,28 +170,29 @@ console.log(setSpecies);
 const species = [...setSpecies, "all2"];
 console.log(species);
 
-species.forEach(especie => {
+species.forEach((especie) => {
   const specieButton = document.getElementById(especie);
   console.log(specieButton);
   //Se llama al escuchador de eventos
-  specieButton.addEventListener('click', () => {
-
+  specieButton.addEventListener("click", () => {
     //---Esto es una prueba de que se está escuchando el click sobre los botones---
-    console.log('He realizado click sobre este btn');
+    console.log("He realizado click sobre este btn");
 
     //--Verificamos como podemos capturar el id del botón
     const speciesString = especie.slice(0, -1);
     console.log(especie);
     console.log(speciesString);
 
-    let filtrado = starWars.filter(personaje => personaje.specie === speciesString);
-    let filtrerArray = speciesString === "all" ? starWars : filtrado;
+    let filtrado = personajes.filter(
+      (personaje) => personaje.specie === speciesString
+    );
+    let filtrerArray = speciesString === "all" ? personajes : filtrado;
     console.log(filtrerArray);
 
     //Invocar la funciín que nos permite pintar las Cards
     printPersonajes(filtrerArray, contenedorCards);
-  })
-})
+  });
+});
 
 //--------------------------------
 //¿Cómo usar los spread Operatos?: Nos permite copiar propiedades de objeto a objeto y elemento de arrays a arrays, sets a Arrays
@@ -182,7 +203,7 @@ const name = "Antonio";
 const age = 30;
 
 const objeto = { variable1, variable2, variable3, name, age };
-const objetoArray = [variable1, variable2, variable3, name, age ];
+const objetoArray = [variable1, variable2, variable3, name, age];
 const newSet = new Set(objetoArray);
 
 console.log(objeto);
