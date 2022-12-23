@@ -1,72 +1,8 @@
 //Ejercicio consiste en crear una página que nos permita filtrar personajes de acuerdo a ciertas características. Este filtro lo vamos a realizar con unos botones de filtrado.
 
-//1. Definir el arrays de personajes (Star wars)
+import { starWars } from "../data/data.js";
 
-const starWars = [
-  {
-    name: "Luke Skywalker",
-    height: "172",
-    mass: "77",
-    hairColor: "blond",
-    skinColor: "fair",
-    eyeColor: "blue",
-    birthYear: "19BBY",
-    gender: "male",
-    specie: "human",
-    image: "https://smoda.elpais.com/wp-content/uploads/2019/12/2-look.jpg",
-  },
-  {
-    name: "C-3PO",
-    height: "167",
-    mass: "75",
-    hairColor: "n/a",
-    skinColor: "gold",
-    eyeColor: "yellow",
-    birthYear: "112BBY",
-    gender: "n/a",
-    specie: "androide",
-    image: "https://upload.wikimedia.org/wikipedia/en/5/5c/C-3PO_droid.png",
-  },
-  {
-    name: "R2-D2",
-    height: "96",
-    mass: "32",
-    hairColor: "n/a",
-    skinColor: "white, blue",
-    eyeColor: "red",
-    birthYear: "33BBY",
-    gender: "n/a",
-    specie: "androide",
-    image:
-      "https://static.wikia.nocookie.net/esstarwars/images/e/e2/Artoo-Fathead.png",
-  },
-  {
-    name: "Darth Vader",
-    height: "202",
-    mass: "136",
-    hairColor: "none",
-    skinColor: "white",
-    eyeColor: "yellow",
-    birthYear: "41.9BBY",
-    gender: "male",
-    specie: "human",
-    image:
-      "https://media.revistagq.com/photos/62a0a996223a33e985e4d59a/master/pass/1072434_110615-cc-Darth-Vader-Thumb.jpg",
-  },
-  {
-    name: "Leia Organa",
-    height: "150",
-    mass: "49",
-    hairColor: "brown",
-    skinColor: "light",
-    eyeColor: "brown",
-    birthYear: "19BBY",
-    gender: "female",
-    specie: "human",
-    image:
-      "https://static.wikia.nocookie.net/esstarwars/images/f/ff/Leia_photomasher.jpg",
-  },
-];
+//Importar el aaray de personajes de starWar desde data.js
 
 //2. Insertar tarjetas de cada personaje dentro de main
 //2.1. Creando una función que nos permita pintar las cards (o tarjentas) dentro del contenedor main
@@ -81,8 +17,10 @@ const printPersonajes = (listPersonajes, contenedor) => {
     article.classList.add("main__card");
     article.innerHTML = `
         <figure class="card__image">
-                    <img src=${personaje.image} alt=${personaje.name}>
+                    <img id=${personaje.id} src=${personaje.image} alt="${personaje.name}" class="card__img">
                 </figure>
+                <button class="card__delete" name='${personaje.id}'>❌</button>
+                <button class="card__edit" name='${personaje.id}'>🖊</button>
                 <h4 class="card__name">${personaje.name}</h4>
         `;
 
@@ -98,24 +36,20 @@ const contenedorCards = document.getElementById("contenedorCards");
 
 //Para obtener los datos de sessionStorage usamos el método getItem(). Este método recibe un parámetro que sería la key (nombre de la propiedad que queremos recuperar desde sessionStorage)
 
-  let personajes = sessionStorage.getItem("personajes")
-    ? JSON.parse(sessionStorage.getItem("personajes"))
-    : [];
+let personajes = sessionStorage.getItem("personajes")
+  ? JSON.parse(sessionStorage.getItem("personajes"))
+  : [];
 
-  console.log(personajes);
+console.log(personajes);
 
 //2.3. Escuchamos al evento DOMContentLoaded (Cuando la página recarga o se renderiza) y cuando este evento ocurre se ejecuta el callback (función que es pasada como parámetro a la función o método .addEventListener('nombreDelEvento', callback)).
 document.addEventListener("DOMContentLoaded", () => {
-  
-
   if (personajes.length === 0) {
     //Guadar el array starWar a sessionStorage con el método setItem(). este método recibe dos parámetros: 1. es la Key (el nombre de la propiedad donde vamos almacenar los datos) 2. Los datos queremos almacenar. Estos datos deben guardarse en el storage como formato JSON.
     sessionStorage.setItem("personajes", JSON.stringify(starWars));
     personajes = JSON.parse(sessionStorage.getItem("personajes"));
     console.log(personajes);
   }
-
-
 
   //Pintamos las cards de cada personaje
   printPersonajes(personajes, contenedorCards);
@@ -215,3 +149,91 @@ const listCopiaDeSet = [...newSet];
 console.log(listCopiaDeSet);
 
 //-------------------------------
+
+//Para que el aplicativo dirija al usuario a la página de detalles de un personaje, debe escruchar primero el click sobre una Card de personaje
+
+document.addEventListener("click", (event) => {
+  // console.log('He hecho click sobre algún lugar del documento');
+  // console.log(event);
+
+  //Destructuración de un objeto
+
+  const { target } = event;
+  // console.log(target);
+
+  //Condicional para ir a detalles
+  if (target.classList.contains("card__img")) {
+    console.log("He hecho click sobre una card de personaje");
+    console.log(target.id);
+    sessionStorage.setItem("seeDetails", JSON.stringify(target.id));
+    window.location.href = "./pages/seeDetails.html";
+  }
+
+  //Condicional para eliminar un personaje
+  if (target.classList.contains("card__delete")) {
+    console.log("Queremos eliminar este personaje");
+    console.log(target.name);
+    console.log(typeof target.name);
+    // const confirmDelete = confirm('¿Está usted seguro de eliminar este personaje?');
+
+    Swal.fire({
+      title: "¿Está usted seguro de eliminar?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+
+        //Encontrar la posición del elemento que queremos borrar dentro del array
+        const idPersonajeDelete = parseInt(target.name);
+        console.log(idPersonajeDelete);
+        console.log(typeof idPersonajeDelete);
+
+        const positionPersonaje = personajes.findIndex(
+          (persona) => persona.id === idPersonajeDelete
+        );
+        console.log(positionPersonaje);
+
+        //Elimina el personaje
+        personajes.splice(positionPersonaje, 1);
+        console.log(personajes);
+
+        //Actualizar el array personajes en sessionStorage
+        sessionStorage.setItem("personajes", JSON.stringify(personajes));
+
+        //Pintar nuevamente las card
+        printPersonajes(personajes, contenedorCards);
+      }
+    });
+
+    // if (confirmDelete) {
+    //   //Encontrar la posición del elemento que queremos borrar dentro del array
+    //   const idPersonajeDelete = parseInt(target.name);
+    //   console.log(idPersonajeDelete);
+    //   console.log(typeof idPersonajeDelete);
+
+    //   const positionPersonaje = personajes.findIndex(
+    //     (persona) => persona.id === idPersonajeDelete
+    //   );
+    //   console.log(positionPersonaje);
+
+    //   //Elimina el personaje
+    //   personajes.splice(positionPersonaje, 1);
+    //   console.log(personajes);
+
+    //   //Pintar nuevamente las card
+    //   printPersonajes(personajes, contenedorCards);
+    // }
+  }
+
+  //El condicional para editar
+  if (target.classList.contains("card__edit")) {
+    console.log(target.name);
+    sessionStorage.setItem("editPersonaje", JSON.stringify(target.name));
+    window.location.href = "./pages/addNewPersonaje.html";
+  }
+});

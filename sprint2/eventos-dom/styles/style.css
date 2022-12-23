@@ -89,3 +89,26 @@ body{
     background-color: black;
     cursor: pointer;
 }
+
+.card__delete, .card__edit{
+    font-size: 25px;
+    position: absolute;
+    top: 0;
+    background-color: transparent;
+    border: none;
+    display: none;
+    padding: 5px;
+}
+
+.card__delete:hover, .card__edit:hover{
+    transform: scale(0.8);
+    cursor: pointer;
+}
+
+.main__card:hover .card__delete, .main__card:hover .card__edit{
+    display: block;
+}
+
+.card__edit{
+    top: 35px;
+}
