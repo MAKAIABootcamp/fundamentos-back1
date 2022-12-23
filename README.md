@@ -47,6 +47,12 @@
 ### Retos 🐱‍💻
 1. Realizar un formulario que permita agregar un producto indicando: nombre, precio, cantidad y categoría. Al guardar, debe agregarlo aun array y mostrarlo en consola, posteriormente, mostrarlo en una tabla, donde estén enlistado todos los productos del array y en la última columna de la tabla debe poseer un botón que permita eliminar y actualizar dicho elemento en el array.
 
+### Proyecto 🤖
+[Proyecto Sprint 2](https://makaia-my.sharepoint.com/:b:/g/personal/mentoria_bootcamp_makaia_org/EbNxWMEqeMlBhCdSyj1DTp0B-yyw-qR5QUUwkFE94MDt4A?e=QbWQJ2)
+
+### Material de estudio ✨✨
+[Curso Algoritmos de JavaScript y estructuras de datos de freeCodeCamp](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/)
+
 ## Sprint 3
 
 **Accede al material de nuestra sesiones [aquí](https://makaia-my.sharepoint.com/:f:/g/personal/mentoria_bootcamp_makaia_org/ErWA518UdzFLsCYexouX4hcBJUuASEwKXDXer0T5jpA5Dw?e=Pgb58X)** 👈
