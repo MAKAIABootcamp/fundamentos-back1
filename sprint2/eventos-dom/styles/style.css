@@ -111,4 +111,10 @@ body{
 
 .card__edit{
     top: 35px;
+    transform: rotate(45deg);
+    color: yellow;
+}
+
+.card__edit:hover{
+    transform: rotate(45deg) scale(0.8);
 }

@@ -20,7 +20,7 @@ const printPersonajes = (listPersonajes, contenedor) => {
                     <img id=${personaje.id} src=${personaje.image} alt="${personaje.name}" class="card__img">
                 </figure>
                 <button class="card__delete" name='${personaje.id}'>❌</button>
-                <button class="card__edit" name='${personaje.id}'>🖊</button>
+                <button class="card__edit" name='${personaje.id}'>✏</button>
                 <h4 class="card__name">${personaje.name}</h4>
         `;
 
@@ -44,6 +44,8 @@ console.log(personajes);
 
 //2.3. Escuchamos al evento DOMContentLoaded (Cuando la página recarga o se renderiza) y cuando este evento ocurre se ejecuta el callback (función que es pasada como parámetro a la función o método .addEventListener('nombreDelEvento', callback)).
 document.addEventListener("DOMContentLoaded", () => {
+  sessionStorage.removeItem("editPersonaje");
+  sessionStorage.removeItem("seeDetails");
   if (personajes.length === 0) {
     //Guadar el array starWar a sessionStorage con el método setItem(). este método recibe dos parámetros: 1. es la Key (el nombre de la propiedad donde vamos almacenar los datos) 2. Los datos queremos almacenar. Estos datos deben guardarse en el storage como formato JSON.
     sessionStorage.setItem("personajes", JSON.stringify(starWars));
@@ -161,7 +163,7 @@ document.addEventListener("click", (event) => {
   const { target } = event;
   // console.log(target);
 
-  //Condicional para ir a detalles
+  //-------------Condicional para ir a detalles--------------------------
   if (target.classList.contains("card__img")) {
     console.log("He hecho click sobre una card de personaje");
     console.log(target.id);
@@ -169,7 +171,7 @@ document.addEventListener("click", (event) => {
     window.location.href = "./pages/seeDetails.html";
   }
 
-  //Condicional para eliminar un personaje
+  //----------------Condicional para eliminar un personaje---------------
   if (target.classList.contains("card__delete")) {
     console.log("Queremos eliminar este personaje");
     console.log(target.name);
@@ -230,7 +232,7 @@ document.addEventListener("click", (event) => {
     // }
   }
 
-  //El condicional para editar
+  //--------------------Condicional para editar--------------------------------
   if (target.classList.contains("card__edit")) {
     console.log(target.name);
     sessionStorage.setItem("editPersonaje", JSON.stringify(target.name));
