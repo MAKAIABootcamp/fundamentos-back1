@@ -54,6 +54,16 @@
 [Curso Algoritmos de JavaScript y estructuras de datos de freeCodeCamp](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/)
 
 ## Sprint 3
+### Contenido 🥇
+
+1. Operaciones Síncronas vs Asíncronas
+2. Promesas y consumo de promesas con `.then()`, `.catch()` y `.finally()` 
+3. Peticiones y métodos HTTP - Fetch
+4. JSON server
+5. `Async/Await`
+
+### Proyecto 🤖
+[Proyecto Sprint 3](https://makaia-my.sharepoint.com/:b:/g/personal/mentoria_bootcamp_makaia_org/EXqF8y3vAQhOi9gsvXWAkFYBa0bWY-_vmLAXCifxhTMBKw?e=rj6yeV)
 
 **Accede al material de nuestra sesiones [aquí](https://makaia-my.sharepoint.com/:f:/g/personal/mentoria_bootcamp_makaia_org/ErWA518UdzFLsCYexouX4hcBJUuASEwKXDXer0T5jpA5Dw?e=Pgb58X)** 👈
 
