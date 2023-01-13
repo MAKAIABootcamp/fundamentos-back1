@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/wallpapersden.com_death-star-hd-star-wars_2560x1440.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Unbounded', cursive;
+}
+
+.header{
+    text-align: center;
+    color: yellow;
+    padding-top: 20px;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px;
+    color: yellow;
+}
+
+#contenedorCards{
+    display: flex;
+    /* padding: 30px; */
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.main__card{
+    width: 300px;
+    height: 450px;
+    position: relative;
+    color: yellow;
+}
+
+.card__image{
+    width: 100%;
+    height: 100%;
+}
+
+.card__image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.card__name{
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    padding: 10px 5px;
+}
+
+.main__card:hover{
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    transform: scale(1.1);
+}
+
+.main__filtros{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.main__filtros button{
+    padding: 5px 10px;
+    font-size: 18px;
+    font-family: 'Unbounded', cursive;
+    border: 2px solid black;
+    background-color: yellow;
+}
+
+.main__filtros button:hover{
+    color: yellow;
+    border: 2px solid yellow;
+    background-color: black;
+    cursor: pointer;
+}
+
+.card__delete, .card__edit, .card__favorite{
+    font-size: 25px;
+    position: absolute;
+    top: 0;
+    background-color: transparent;
+    border: none;
+    display: none;
+    padding: 5px;
+}
+
+.card__delete:hover, .card__edit:hover, .card__favorite:hover{
+    transform: scale(0.8);
+    cursor: pointer;
+}
+
+.main__card:hover .card__delete, .main__card:hover .card__edit, .main__card:hover .card__favorite{
+    display: block;
+}
+
+.card__edit{
+    top: 35px;
+    transform: rotate(45deg);
+    color: yellow;
+}
+
+.card__edit:hover{
+    transform: rotate(45deg) scale(0.8);
+}
+
+.card__favorite{
+    top: 400px;
+    left: 250px;
+    color: red;
+}

@@ -1,0 +1,84 @@
+{
+  "personajes": [
+    {
+      "id": 1,
+      "name": "Luke Skywalker",
+      "height": "172",
+      "mass": "77",
+      "hairColor": "blond",
+      "skinColor": "fair",
+      "eyeColor": "blue",
+      "birthYear": "19BBY",
+      "gender": "male",
+      "specie": "human",
+      "image": "https://smoda.elpais.com/wp-content/uploads/2019/12/2-look.jpg"
+    },
+    {
+      "name": "Darth Vader",
+      "height": "202",
+      "mass": "136",
+      "hairColor": "none",
+      "skinColor": "black",
+      "eyeColor": "yellow",
+      "birthYear": "41.9BBY",
+      "gender": "male",
+      "specie": "human",
+      "image": "https://media.revistagq.com/photos/62a0a996223a33e985e4d59a/master/pass/1072434_110615-cc-Darth-Vader-Thumb.jpg",
+      "id": 4
+    },
+    {
+      "name": "Whitney Jhoana",
+      "height": "1631",
+      "mass": "4165",
+      "hairColor": "asdas",
+      "skinColor": "asdasd",
+      "eyeColor": "asdas",
+      "birthYear": "ads",
+      "gender": "female",
+      "specie": "human",
+      "image": "https://media.revistagq.com/photos/62a0a996223a33e985e4d59a/master/pass/1072434_110615-cc-Darth-Vader-Thumb.jpg",
+      "id": 6
+    }
+  ],
+  "favoritos": [
+    {
+      "name": "Darth Vader",
+      "height": "202",
+      "mass": "136",
+      "hairColor": "none",
+      "skinColor": "black",
+      "eyeColor": "yellow",
+      "birthYear": "41.9BBY",
+      "gender": "male",
+      "specie": "human",
+      "image": "https://media.revistagq.com/photos/62a0a996223a33e985e4d59a/master/pass/1072434_110615-cc-Darth-Vader-Thumb.jpg",
+      "id": 4
+    },
+    {
+      "name": "Whitney Jhoana",
+      "height": "1631",
+      "mass": "4165",
+      "hairColor": "asdas",
+      "skinColor": "asdasd",
+      "eyeColor": "asdas",
+      "birthYear": "ads",
+      "gender": "female",
+      "specie": "human",
+      "image": "https://media.revistagq.com/photos/62a0a996223a33e985e4d59a/master/pass/1072434_110615-cc-Darth-Vader-Thumb.jpg",
+      "id": 6
+    },
+    {
+      "id": 1,
+      "name": "Luke Skywalker",
+      "height": "172",
+      "mass": "77",
+      "hairColor": "blond",
+      "skinColor": "fair",
+      "eyeColor": "blue",
+      "birthYear": "19BBY",
+      "gender": "male",
+      "specie": "human",
+      "image": "https://smoda.elpais.com/wp-content/uploads/2019/12/2-look.jpg"
+    }
+  ]
+}

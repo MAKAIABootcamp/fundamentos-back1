@@ -2,6 +2,8 @@
 
 import { starWars } from "../data/data.js";
 
+// import  starWars from "../data/data.js";
+
 //Importar el aaray de personajes de starWar desde data.js
 
 //2. Insertar tarjetas de cada personaje dentro de main

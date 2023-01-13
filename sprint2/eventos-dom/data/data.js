@@ -70,3 +70,5 @@ export const starWars = [
       "https://static.wikia.nocookie.net/esstarwars/images/f/ff/Leia_photomasher.jpg",
   },
 ];
+
+// export default starWars;
